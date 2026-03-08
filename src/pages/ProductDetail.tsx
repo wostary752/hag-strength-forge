@@ -11,6 +11,7 @@ import rackDetail3 from "@/assets/rack-detail-3.jpg";
 import rackDetail4 from "@/assets/rack-detail-4.jpg";
 import rackDetail5 from "@/assets/rack-detail-5.jpg";
 import rackDetail6 from "@/assets/rack-detail-6.jpg";
+import discRack1 from "@/assets/disc-rack-1.png";
 import { useState } from "react";
 
 const productsData: Record<string, {
@@ -21,13 +22,16 @@ const productsData: Record<string, {
   specs: { label: string; value: string }[];
   category: string;
   categoryHref: string;
+  imageFit?: "cover" | "contain";
+  imageAspect?: string;
+  imageNaturalSize?: boolean;
 }> = {
   "rack-lite": {
     title: "RACK LITE",
     images: [rackLiteMain, rackLite1, rackDetail1, rackDetail2, rackDetail3, rackDetail4, rackDetail5, rackDetail6],
     description:
       "Стойка для приседаний, которая становится тихим и надёжным партнёром в ваших тренировках. Болтовая сборка позволяет собрать её в гараже или зале, а при необходимости — легко разобрать и перевезти. Конструкция из стали 20 обеспечивает прочность и долговечность, а ответственные элементы из стали 09Г2С гарантируют безопасность при максимальных нагрузках.",
-    price: "94 800 ₽",
+    price: "152 000 ₽",
     specs: [
       { label: "Размер", value: "1700×1200×2300 мм" },
       { label: "Масса", value: "260 кг" },
@@ -38,6 +42,25 @@ const productsData: Record<string, {
     ],
     category: "Силовые рамы",
     categoryHref: "/products/power",
+  },
+  "disc-rack-8": {
+    title: "Стойка для дисков HGL01",
+    images: [discRack1],
+    description:
+      "Выбор тех, кто ценит практичность. Каркас из стали 3 мм выдерживает до 640 кг — восемь держателей по 50 мм вместят весь набор олимпийских дисков. Компактные габариты экономят место без потери вместимости. Порошковое покрытие не боится отпечатков и коррозии. Подходит и коммерческим залам, и домашним зонам.",
+    price: "Цена по запросу",
+    specs: [
+      { label: "Высота", value: "1275 мм" },
+      { label: "Ширина", value: "610 мм" },
+      { label: "Длина", value: "1170 мм" },
+      { label: "Масса", value: "50 кг" },
+      { label: "Держатели", value: "8 шт" },
+      { label: "Посадочных мест", value: "8" },
+      { label: "Нагрузка на место", value: "до 80 кг" },
+    ],
+    category: "Стойки для дисков",
+    categoryHref: "/products/auxiliary",
+    imageNaturalSize: true,
   },
 };
 
@@ -74,11 +97,11 @@ export default function ProductDetail() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Gallery */}
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }}>
-              <div className="overflow-hidden rounded-lg mb-4 bg-secondary">
+              <div className={`overflow-hidden rounded-lg mb-4 ${product.imageNaturalSize ? "" : `bg-secondary flex items-center justify-center min-h-[300px] ${product.imageAspect ?? "aspect-square"}`}`}>
                 <img
                   src={product.images[activeImage]}
                   alt={product.title}
-                  className="w-full h-auto object-cover aspect-square"
+                  className={product.imageNaturalSize ? "w-full h-auto block" : `w-full h-full ${product.imageFit === "contain" ? "object-contain" : "object-cover"}`}
                 />
               </div>
               <div className="grid grid-cols-4 gap-2">
@@ -86,11 +109,11 @@ export default function ProductDetail() {
                   <button
                     key={i}
                     onClick={() => setActiveImage(i)}
-                    className={`overflow-hidden rounded border-2 transition-colors ${
+                    className={`overflow-hidden rounded border-2 transition-colors flex items-center justify-center bg-secondary aspect-square ${
                       activeImage === i ? "border-primary" : "border-border hover:border-primary/50"
                     }`}
                   >
-                    <img src={img} alt="" className="w-full h-auto aspect-square object-cover" />
+                    <img src={img} alt="" className={`w-full h-full aspect-square ${product.imageFit === "contain" ? "object-contain" : "object-cover"}`} />
                   </button>
                 ))}
               </div>

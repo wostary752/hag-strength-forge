@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Shield, Award, Wrench, Dumbbell, Heart, Zap } from "lucide-react";
+import { Shield, Award, Wrench, Dumbbell, Heart, Zap, Package } from "lucide-react";
 import Layout from "@/components/Layout";
 import ContactFormDialog from "@/components/ContactFormDialog";
 import heroBg from "@/assets/hero-bg.jpg";
@@ -10,6 +10,7 @@ const categories = [
   { title: "Силовые тренажеры", icon: Dumbbell, description: "Рамы, скамьи, нагружаемые тренажеры", href: "/products/power" },
   { title: "Кардио тренажеры", icon: Heart, description: "Беговые дорожки, велотренажеры, эллипсы", href: "/products/cardio" },
   { title: "Функциональный тренинг", icon: Zap, description: "Канатные машины, TRX, кроссоверы", href: "/products/functional" },
+  { title: "Вспомогательное оборудование", icon: Package, description: "Стойки для дисков, скамейки, держатели", href: "/products/auxiliary" },
 ];
 
 const advantages = [
@@ -90,7 +91,7 @@ export default function Index() {
           <h2 className="font-heading text-3xl md:text-5xl uppercase tracking-wider text-center mb-12">
             Категории <span className="text-primary">продукции</span>
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {categories.map((cat, i) => (
               <motion.div
                 key={cat.title}

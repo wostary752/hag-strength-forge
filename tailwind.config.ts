@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         heading: ["Oswald", "sans-serif"],
         body: ["Inter", "sans-serif"],
+        logo: ["Bebas Neue", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

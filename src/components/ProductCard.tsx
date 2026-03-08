@@ -7,9 +7,12 @@ interface ProductCardProps {
   description: string;
   price?: string;
   href?: string;
+  imageFit?: "cover" | "contain";
+  imageAspect?: string;
+  imageNaturalSize?: boolean;
 }
 
-export default function ProductCard({ title, image, description, price, href }: ProductCardProps) {
+export default function ProductCard({ title, image, description, price, href, imageFit = "cover", imageAspect = "aspect-square", imageNaturalSize = false }: ProductCardProps) {
   const content = (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -18,11 +21,11 @@ export default function ProductCard({ title, image, description, price, href }: 
       transition={{ duration: 0.5 }}
       className="group bg-card border border-border rounded-lg overflow-hidden hover-lift"
     >
-      <div className="aspect-square overflow-hidden bg-secondary">
+      <div className={imageNaturalSize ? "overflow-hidden" : `${imageAspect} overflow-hidden bg-secondary flex items-center justify-center`}>
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          className={imageNaturalSize ? "w-full h-auto block transition-transform duration-500 group-hover:scale-105" : `w-full h-full transition-transform duration-500 group-hover:scale-105 ${imageFit === "contain" ? "object-contain" : "object-cover"}`}
         />
       </div>
       <div className="p-5">

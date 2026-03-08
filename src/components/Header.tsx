@@ -7,6 +7,7 @@ const productLinks = [
   { title: "Силовые тренажеры", href: "/products/power" },
   { title: "Кардио тренажеры", href: "/products/cardio" },
   { title: "Функциональный тренинг", href: "/products/functional" },
+  { title: "Вспомогательное оборудование", href: "/products/auxiliary" },
 ];
 
 const navLinks = [
@@ -72,7 +73,7 @@ export default function Header() {
             </button>
             {dropdownOpen && (
               <div
-                className="absolute top-full left-0 pt-2 w-64 z-[100]"
+                className="absolute top-full left-0 pt-2 w-80 min-w-[280px] z-[100]"
                 onMouseEnter={openDropdown}
                 onMouseLeave={closeDropdown}
               >
