@@ -12,6 +12,9 @@ import rackDetail4 from "@/assets/rack-detail-4.jpg";
 import rackDetail5 from "@/assets/rack-detail-5.jpg";
 import rackDetail6 from "@/assets/rack-detail-6.jpg";
 import discRack1 from "@/assets/disc-rack-1.png";
+import discRack2 from "@/assets/disc-rack-2.png";
+import discRack3 from "@/assets/disc-rack-3.webp";
+import discRack4 from "@/assets/disc-rack-4.webp";
 import { useState } from "react";
 
 const productsData: Record<string, {
@@ -45,10 +48,10 @@ const productsData: Record<string, {
   },
   "disc-rack-8": {
     title: "Стойка для дисков HGL01",
-    images: [discRack1],
+    images: [discRack1, discRack2, discRack3, discRack4],
     description:
       "Выбор тех, кто ценит практичность. Каркас из стали 3 мм выдерживает до 640 кг — восемь держателей по 50 мм вместят весь набор олимпийских дисков. Компактные габариты экономят место без потери вместимости. Порошковое покрытие не боится отпечатков и коррозии. Подходит и коммерческим залам, и домашним зонам.",
-    price: "Цена по запросу",
+    price: "34 800 ₽",
     specs: [
       { label: "Высота", value: "1275 мм" },
       { label: "Ширина", value: "610 мм" },
