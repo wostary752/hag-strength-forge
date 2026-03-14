@@ -15,6 +15,8 @@ import discRack1 from "@/assets/disc-rack-1.png";
 import discRack2 from "@/assets/disc-rack-2.png";
 import discRack3 from "@/assets/disc-rack-3.webp";
 import discRack4 from "@/assets/disc-rack-4.webp";
+import barbellRackEmpty from "@/assets/barbell-rack-empty.png";
+import barbellRackLoaded from "@/assets/barbell-rack-loaded.png";
 import { useState } from "react";
 
 const productsData: Record<string, {
@@ -61,7 +63,25 @@ const productsData: Record<string, {
       { label: "Посадочных мест", value: "8" },
       { label: "Нагрузка на место", value: "до 80 кг" },
     ],
-    category: "Стойки для дисков",
+    category: "Стойки",
+    categoryHref: "/products/auxiliary",
+    imageNaturalSize: true,
+  },
+  "barbell-rack-10": {
+    title: "Стойка для 10 грифов HGL02",
+    images: [barbellRackLoaded, barbellRackEmpty],
+    description:
+      "Надёжная стойка для хранения до 10 грифов различного веса и длины. Прочный каркас из стали 20 обеспечивает устойчивость и долговечность при ежедневной эксплуатации. А-образная конструкция позволяет разместить грифы компактно, экономя пространство в тренажёрном зале или кроссфит-боксе. Порошковое покрытие защищает от коррозии и механических повреждений.",
+    price: "65 000 ₽",
+    specs: [
+      { label: "Высота", value: "1327 мм" },
+      { label: "Длина", value: "1048 мм" },
+      { label: "Ширина", value: "968 мм" },
+      { label: "Масса", value: "87 кг" },
+      { label: "Основной металл", value: "Сталь 20" },
+      { label: "Покрытие", value: "Порошковая окраска" },
+    ],
+    category: "Стойки",
     categoryHref: "/products/auxiliary",
     imageNaturalSize: true,
   },

@@ -10,6 +10,7 @@ import PowerEquipment from "./pages/PowerEquipment";
 import CardioEquipment from "./pages/CardioEquipment";
 import FunctionalTraining from "./pages/FunctionalTraining";
 import AuxiliaryEquipment from "./pages/AuxiliaryEquipment";
+import Catalog from "./pages/Catalog";
 import ProductDetail from "./pages/ProductDetail";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import LicenseAgreement from "./pages/LicenseAgreement";
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/products/cardio" element={<CardioEquipment />} />
           <Route path="/products/functional" element={<FunctionalTraining />} />
           <Route path="/products/auxiliary" element={<AuxiliaryEquipment />} />
+          <Route path="/catalog" element={<Catalog />} />
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/custom" element={<CustomDevelopment />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
