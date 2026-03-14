@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import ProductCard from "@/components/ProductCard";
 import rackLiteMain from "@/assets/rack-lite-main.jpg";
-import discRack2 from "@/assets/disc-rack-2.png";
+import discRackNew from "@/assets/disc-rack-new.png";
 import barbellRackLoaded from "@/assets/barbell-rack-loaded.png";
 import { Dumbbell, Heart, Zap, Package } from "lucide-react";
 
