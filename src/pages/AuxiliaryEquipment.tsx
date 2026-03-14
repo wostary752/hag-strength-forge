@@ -3,6 +3,7 @@ import { useState } from "react";
 import Layout from "@/components/Layout";
 import ProductCard from "@/components/ProductCard";
 import discRack2 from "@/assets/disc-rack-2.png";
+import barbellRackLoaded from "@/assets/barbell-rack-loaded.png";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const discRacks = [
@@ -13,6 +14,14 @@ const discRacks = [
     description:
       "Сталь 3 мм, восемь держателей 50 мм. Компактная — подойдёт и залу, и дому. Порошковое покрытие сохраняет вид на годы.",
     price: "34 800 ₽",
+  },
+  {
+    id: "barbell-rack-10",
+    title: "Стойка для 10 грифов HGL02",
+    image: barbellRackLoaded,
+    description:
+      "Надёжная стойка для хранения до 10 грифов. Прочный каркас из стали 20 выдерживает интенсивную эксплуатацию. Компактная А-образная конструкция экономит место в зале.",
+    price: "65 000 ₽",
   },
 ];
 
