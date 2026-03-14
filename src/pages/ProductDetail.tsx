@@ -15,6 +15,8 @@ import discRack1 from "@/assets/disc-rack-1.png";
 import discRack2 from "@/assets/disc-rack-2.png";
 import discRack3 from "@/assets/disc-rack-3.webp";
 import discRack4 from "@/assets/disc-rack-4.webp";
+import barbellRackEmpty from "@/assets/barbell-rack-empty.png";
+import barbellRackLoaded from "@/assets/barbell-rack-loaded.png";
 import { useState } from "react";
 
 const productsData: Record<string, {
