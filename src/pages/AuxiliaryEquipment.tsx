@@ -50,7 +50,7 @@ export default function AuxiliaryEquipment() {
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
             <TabsList className="flex flex-wrap justify-center gap-3 mb-10 w-auto h-auto p-2 bg-muted/50 rounded-lg">
               <TabsTrigger value="disc-racks" className="font-heading uppercase tracking-wider px-6 py-3 text-sm">
-                Стойки для дисков
+                Стойки
               </TabsTrigger>
               <TabsTrigger value="benches" className="font-heading uppercase tracking-wider px-6 py-3 text-sm">
                 Скамейки
