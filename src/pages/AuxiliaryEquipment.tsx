@@ -4,6 +4,7 @@ import Layout from "@/components/Layout";
 import ProductCard from "@/components/ProductCard";
 import discRackNew from "@/assets/disc-rack-new.png";
 import barbellRackLoaded from "@/assets/barbell-rack-loaded.png";
+import bench45 from "@/assets/bench-45.png";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const discRacks = [
@@ -25,7 +26,16 @@ const discRacks = [
   },
 ];
 
-const benches: unknown[] = [];
+const benches = [
+  {
+    id: "bench-universal",
+    title: "Скамья универсальная HGL03",
+    image: bench45,
+    description:
+      "Регулируемая скамья для жима и силовых упражнений. Угол наклона спинки до 90° позволяет выполнять упражнения от горизонтального жима до армейского. Компактная и лёгкая — всего 20 кг.",
+    price: "35 000 ₽",
+  },
+];
 const holders: unknown[] = [];
 
 export default function AuxiliaryEquipment() {
