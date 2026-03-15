@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import ProductCard from "@/components/ProductCard";
+import PageSEO from "@/components/PageSEO";
 import rackLite2 from "@/assets/rack-lite-2.jpg";
 
 const products = [
@@ -16,6 +17,11 @@ const products = [
 export default function PowerEquipment() {
   return (
     <Layout>
+      <PageSEO
+        title="Силовые тренажёры HAGL — рамы, стойки для приседаний, купить"
+        description="Профессиональные силовые тренажёры HAGL. Рамы для приседаний и жима из стали 20 и 09Г2С. Болтовая сборка, порошковое покрытие. Доставка по России."
+        path="/products/power"
+      />
       <section className="section-padding relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'40\' height=\'40\' viewBox=\'0 0 40 40\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Ccircle cx=\'20\' cy=\'20\' r=\'2\' fill=\'white\'/%3E%3C/svg%3E")', backgroundSize: '40px 40px' }} />
         <div className="container mx-auto relative z-10">
