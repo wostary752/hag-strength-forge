@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import ProductCard from "@/components/ProductCard";
+import PageSEO from "@/components/PageSEO";
 import rackLite2 from "@/assets/rack-lite-2.jpg";
 
 const products = [
