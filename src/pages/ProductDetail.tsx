@@ -14,6 +14,8 @@ import rackDetail6 from "@/assets/rack-detail-6.jpg";
 import discRackNew from "@/assets/disc-rack-new.png";
 import barbellRackEmpty from "@/assets/barbell-rack-empty.png";
 import barbellRackLoaded from "@/assets/barbell-rack-loaded.png";
+import bench45 from "@/assets/bench-45.png";
+import benchFlat from "@/assets/bench-flat.png";
 import { useState } from "react";
 
 const productsData: Record<string, {
