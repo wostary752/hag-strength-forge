@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import Layout from "@/components/Layout";
 import ContactFormDialog from "@/components/ContactFormDialog";
+import ProductSEO from "@/components/ProductSEO";
 import rackLiteMain from "@/assets/rack-lite-main.jpg";
 import rackLite1 from "@/assets/rack-lite-1.jpg";
 import rackDetail1 from "@/assets/rack-detail-1.jpg";
