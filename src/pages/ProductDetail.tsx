@@ -14,6 +14,8 @@ import rackDetail6 from "@/assets/rack-detail-6.jpg";
 import discRackNew from "@/assets/disc-rack-new.png";
 import barbellRackEmpty from "@/assets/barbell-rack-empty.png";
 import barbellRackLoaded from "@/assets/barbell-rack-loaded.png";
+import bench45 from "@/assets/bench-45.png";
+import benchFlat from "@/assets/bench-flat.png";
 import { useState } from "react";
 
 const productsData: Record<string, {
@@ -79,6 +81,24 @@ const productsData: Record<string, {
       { label: "Покрытие", value: "Порошковая окраска" },
     ],
     category: "Стойки",
+    categoryHref: "/products/auxiliary",
+    imageNaturalSize: true,
+  },
+  "bench-universal": {
+    title: "Скамья универсальная HGL03",
+    images: [bench45, benchFlat],
+    description:
+      "Регулируемая скамья для жима лёжа, сидя и под углом. Спинка фиксируется в нескольких положениях до 90°, что позволяет выполнять весь спектр упражнений — от горизонтального жима до армейского. Прочный стальной каркас с порошковым покрытием обеспечивает устойчивость и долговечность. Компактные размеры и малый вес делают скамью удобной для домашних и коммерческих залов.",
+    price: "35 000 ₽",
+    specs: [
+      { label: "Длина", value: "1100 мм" },
+      { label: "Высота (спинка)", value: "1050 мм" },
+      { label: "Ширина", value: "660 мм" },
+      { label: "Угол регулировки", value: "до 90°" },
+      { label: "Масса", value: "20 кг" },
+      { label: "Покрытие", value: "Порошковая окраска" },
+    ],
+    category: "Скамейки",
     categoryHref: "/products/auxiliary",
     imageNaturalSize: true,
   },

@@ -5,6 +5,7 @@ import ProductCard from "@/components/ProductCard";
 import rackLiteMain from "@/assets/rack-lite-main.jpg";
 import discRackNew from "@/assets/disc-rack-new.png";
 import barbellRackLoaded from "@/assets/barbell-rack-loaded.png";
+import bench45 from "@/assets/bench-45.png";
 import { Dumbbell, Heart, Zap, Package } from "lucide-react";
 
 const allProducts = [
@@ -35,6 +36,16 @@ const allProducts = [
     price: "65 000 ₽",
     category: "Вспомогательное оборудование",
     href: "/product/barbell-rack-10",
+    imageNaturalSize: true,
+  },
+  {
+    id: "bench-universal",
+    title: "Скамья универсальная HGL03",
+    image: bench45,
+    description: "Регулируемая скамья для жима и силовых упражнений. Угол наклона до 90°, вес всего 20 кг.",
+    price: "35 000 ₽",
+    category: "Вспомогательное оборудование",
+    href: "/product/bench-universal",
     imageNaturalSize: true,
   },
 ];
