@@ -125,6 +125,13 @@ export default function ProductDetail() {
 
   return (
     <Layout>
+      <ProductSEO
+        title={product.title}
+        description={product.description}
+        price={product.price}
+        url={`/product/${id}`}
+        specs={product.specs}
+      />
       <section className="section-padding">
         <div className="container mx-auto">
           <Link

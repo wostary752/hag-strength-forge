@@ -59,6 +59,11 @@ const comingSoon = [
 export default function Catalog() {
   return (
     <Layout>
+      <PageSEO
+        title="Каталог спортивного оборудования HAGL — силовые рамы, стойки, скамьи"
+        description="Полный каталог профессионального спортивного оборудования HAGL. Силовые рамы, стойки для дисков и грифов, скамьи для жима. Купить тренажёры с доставкой по России."
+        path="/catalog"
+      />
       <section className="section-padding relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'40\' height=\'40\' viewBox=\'0 0 40 40\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Ccircle cx=\'20\' cy=\'20\' r=\'2\' fill=\'white\'/%3E%3C/svg%3E")', backgroundSize: '40px 40px' }} />
         <div className="container mx-auto relative z-10">
