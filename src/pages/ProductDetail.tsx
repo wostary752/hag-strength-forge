@@ -84,6 +84,24 @@ const productsData: Record<string, {
     categoryHref: "/products/auxiliary",
     imageNaturalSize: true,
   },
+  "bench-universal": {
+    title: "Скамья универсальная HGL03",
+    images: [bench45, benchFlat],
+    description:
+      "Регулируемая скамья для жима лёжа, сидя и под углом. Спинка фиксируется в нескольких положениях до 90°, что позволяет выполнять весь спектр упражнений — от горизонтального жима до армейского. Прочный стальной каркас с порошковым покрытием обеспечивает устойчивость и долговечность. Компактные размеры и малый вес делают скамью удобной для домашних и коммерческих залов.",
+    price: "35 000 ₽",
+    specs: [
+      { label: "Длина", value: "1100 мм" },
+      { label: "Высота (спинка)", value: "1050 мм" },
+      { label: "Ширина", value: "660 мм" },
+      { label: "Угол регулировки", value: "до 90°" },
+      { label: "Масса", value: "20 кг" },
+      { label: "Покрытие", value: "Порошковая окраска" },
+    ],
+    category: "Скамейки",
+    categoryHref: "/products/auxiliary",
+    imageNaturalSize: true,
+  },
 };
 
 export default function ProductDetail() {
