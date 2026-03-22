@@ -3,6 +3,7 @@ import Layout from "@/components/Layout";
 import ProductCard from "@/components/ProductCard";
 import PageSEO from "@/components/PageSEO";
 import rackLite2 from "@/assets/rack-lite-2.jpg";
+import latPulldownMain from "@/assets/lat-pulldown-main.png";
 
 const products = [
   {
@@ -10,7 +11,14 @@ const products = [
     title: "RACK LITE",
     image: rackLite2,
     description: "Силовая рама для приседаний с болтовой сборкой. 1700×1200×2300 мм, 260 кг. Сталь 20 / 09Г2С.",
-    price: "152 000 ₽",
+    price: "94 800 ₽",
+  },
+  {
+    id: "lat-pulldown",
+    title: "Тяга верхнего блока HGL294",
+    image: latPulldownMain,
+    description: "Грузоблочный тренажёр для тренировки широчайших мышц спины. Стек 100 кг с шагом 5 кг.",
+    price: "По запросу",
   },
 ];
 
@@ -18,8 +26,8 @@ export default function PowerEquipment() {
   return (
     <Layout>
       <PageSEO
-        title="Силовые тренажёры HAGL — рамы, стойки для приседаний, купить"
-        description="Профессиональные силовые тренажёры HAGL. Рамы для приседаний и жима из стали 20 и 09Г2С. Болтовая сборка, порошковое покрытие. Доставка по России."
+        title="Силовые тренажёры HAGL — рамы, стойки, тяга верхнего блока, купить"
+        description="Профессиональные силовые тренажёры HAGL. Рамы для приседаний, тяга верхнего блока, грузоблочные тренажёры. Сталь 20 и 09Г2С. Доставка по России."
         path="/products/power"
       />
       <section className="section-padding relative overflow-hidden">

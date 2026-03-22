@@ -24,9 +24,10 @@ async function sendToTelegram(data: { name: string; phone: string; email: string
 interface ContactFormDialogProps {
   children: React.ReactNode;
   defaultProduct?: string;
+  onSubmitted?: () => void;
 }
 
-export default function ContactFormDialog({ children, defaultProduct = "" }: ContactFormDialogProps) {
+export default function ContactFormDialog({ children, defaultProduct = "", onSubmitted }: ContactFormDialogProps) {
   const [open, setOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -57,6 +58,7 @@ export default function ContactFormDialog({ children, defaultProduct = "" }: Con
     try {
       await sendToTelegram(form);
       setSubmitted(true);
+      onSubmitted?.();
     } catch {
       toast({ title: "Ошибка", description: "Не удалось отправить заявку. Попробуйте позже.", variant: "destructive" });
     } finally {

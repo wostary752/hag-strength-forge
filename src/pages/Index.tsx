@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Shield, Award, Wrench, Dumbbell, Heart, Zap, Package } from "lucide-react";
+import { Shield, Award, Wrench, Dumbbell, Heart, Zap, Package, ShoppingCart } from "lucide-react";
 import Layout from "@/components/Layout";
 import ContactFormDialog from "@/components/ContactFormDialog";
+import ProductCard from "@/components/ProductCard";
 import heroBg from "@/assets/hero-bg.jpg";
 import rackLite from "@/assets/rack-lite-main.jpg";
+import rackLiteMain from "@/assets/rack-lite-main.jpg";
+import discRackNew from "@/assets/disc-rack-new.png";
+import barbellRackLoaded from "@/assets/barbell-rack-loaded.png";
+import bench45 from "@/assets/bench-45.png";
+import latPulldownMain from "@/assets/lat-pulldown-main.png";
 
 const categories = [
   { title: "Силовые тренажеры", icon: Dumbbell, description: "Рамы, скамьи, нагружаемые тренажеры", href: "/products/power" },
@@ -17,6 +23,13 @@ const advantages = [
   { icon: Shield, title: "Гарантия качества", text: "Все тренажеры проходят многоступенчатый контроль качества" },
   { icon: Award, title: "Профессиональное оборудование", text: "Используется в элитных фитнес-клубах и спортзалах" },
   { icon: Wrench, title: "Надёжная конструкция", text: "Сталь 20 и 09Г2С — материалы, проверенные временем" },
+];
+
+const featuredProducts = [
+  { id: "rack-lite", title: "RACK LITE", image: rackLiteMain, description: "Стойка для приседаний. Болтовая сборка, сталь 20 и 09Г2С.", price: "94 800 ₽", href: "/product/rack-lite" },
+  { id: "lat-pulldown", title: "Тяга верхнего блока HGL294", image: latPulldownMain, description: "Грузоблочный тренажёр для тренировки широчайших мышц спины.", price: "По запросу", href: "/product/lat-pulldown" },
+  { id: "disc-rack-8", title: "Стойка для дисков HGL01", image: discRackNew, description: "Сталь 3 мм, восемь держателей 50 мм.", price: "34 800 ₽", href: "/product/disc-rack-8", imageNaturalSize: true },
+  { id: "bench-universal", title: "Скамья HGL03", image: bench45, description: "Регулируемая скамья для жима. Угол до 90°.", price: "35 000 ₽", href: "/product/bench-universal", imageNaturalSize: true },
 ];
 
 export default function Index() {
@@ -51,7 +64,7 @@ export default function Index() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <Link
-              to="/products/power"
+              to="/catalog"
               className="inline-block bg-primary text-primary-foreground font-heading uppercase tracking-widest text-sm px-8 py-4 rounded hover:bg-primary/90 transition-colors"
             >
               Перейти к продукции
@@ -85,8 +98,53 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Categories */}
+      {/* Products showcase */}
       <section className="section-padding bg-card">
+        <div className="container mx-auto">
+          <div className="flex items-center justify-between mb-12">
+            <h2 className="font-heading text-3xl md:text-5xl uppercase tracking-wider">
+              Наша <span className="text-primary">продукция</span>
+            </h2>
+            <Link
+              to="/catalog"
+              className="hidden sm:inline-flex items-center gap-2 text-primary font-heading uppercase tracking-widest text-sm hover:text-primary/80 transition-colors"
+            >
+              Весь каталог →
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {featuredProducts.map((p, i) => (
+              <motion.div
+                key={p.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+              >
+                <ProductCard
+                  title={p.title}
+                  image={p.image}
+                  description={p.description}
+                  price={p.price}
+                  href={p.href}
+                  imageNaturalSize={p.imageNaturalSize}
+                />
+              </motion.div>
+            ))}
+          </div>
+          <div className="sm:hidden text-center mt-8">
+            <Link
+              to="/catalog"
+              className="inline-block text-primary font-heading uppercase tracking-widest text-sm"
+            >
+              Весь каталог →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Categories */}
+      <section className="section-padding">
         <div className="container mx-auto">
           <h2 className="font-heading text-3xl md:text-5xl uppercase tracking-wider text-center mb-12">
             Категории <span className="text-primary">продукции</span>
@@ -102,7 +160,7 @@ export default function Index() {
               >
                 <Link
                   to={cat.href}
-                  className="block bg-background border border-border rounded-lg p-8 text-center hover-lift group h-full flex flex-col items-center justify-center"
+                  className="block bg-card border border-border rounded-lg p-8 text-center hover-lift group h-full flex flex-col items-center justify-center"
                 >
                   <cat.icon className="h-12 w-12 mx-auto mb-4 text-primary transition-transform duration-300 group-hover:scale-110" />
                   <h3 className="font-heading text-xl uppercase tracking-wide mb-2">{cat.title}</h3>
@@ -115,7 +173,7 @@ export default function Index() {
       </section>
 
       {/* Featured product */}
-      <section className="section-padding">
+      <section className="section-padding bg-card">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -158,10 +216,10 @@ export default function Index() {
                 </div>
               </div>
               <Link
-                to="/products/power"
+                to="/product/rack-lite"
                 className="inline-block bg-primary text-primary-foreground font-heading uppercase tracking-widest text-sm px-8 py-4 rounded hover:bg-primary/90 transition-colors"
               >
-                Смотреть в каталоге
+                Подробнее
               </Link>
             </motion.div>
           </div>
@@ -169,7 +227,7 @@ export default function Index() {
       </section>
 
       {/* Advantages */}
-      <section className="section-padding bg-card">
+      <section className="section-padding">
         <div className="container mx-auto">
           <h2 className="font-heading text-3xl md:text-5xl uppercase tracking-wider text-center mb-12">
             Наши <span className="text-primary">преимущества</span>
@@ -194,7 +252,7 @@ export default function Index() {
       </section>
 
       {/* CTA */}
-      <section className="section-padding text-center">
+      <section className="section-padding text-center bg-card">
         <div className="container mx-auto max-w-3xl">
           <h2 className="font-heading text-3xl md:text-5xl uppercase tracking-wider mb-6">
             Готовы <span className="text-primary">начать?</span>
