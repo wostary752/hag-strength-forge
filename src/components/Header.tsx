@@ -26,6 +26,7 @@ export default function Header() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const location = useLocation();
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const { totalItems, setIsOpen: setCartOpen } = useCart();
 
   const isActive = (href: string) => location.pathname === href;
   const isProductActive = productLinks.some((l) => location.pathname.startsWith(l.href));
