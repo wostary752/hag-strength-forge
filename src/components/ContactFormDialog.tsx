@@ -27,7 +27,7 @@ interface ContactFormDialogProps {
   onSubmitted?: () => void;
 }
 
-export default function ContactFormDialog({ children, defaultProduct = "" }: ContactFormDialogProps) {
+export default function ContactFormDialog({ children, defaultProduct = "", onSubmitted }: ContactFormDialogProps) {
   const [open, setOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
