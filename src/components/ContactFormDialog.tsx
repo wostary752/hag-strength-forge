@@ -24,6 +24,7 @@ async function sendToTelegram(data: { name: string; phone: string; email: string
 interface ContactFormDialogProps {
   children: React.ReactNode;
   defaultProduct?: string;
+  onSubmitted?: () => void;
 }
 
 export default function ContactFormDialog({ children, defaultProduct = "" }: ContactFormDialogProps) {
