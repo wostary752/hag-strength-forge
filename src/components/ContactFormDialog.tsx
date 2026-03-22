@@ -58,6 +58,7 @@ export default function ContactFormDialog({ children, defaultProduct = "", onSub
     try {
       await sendToTelegram(form);
       setSubmitted(true);
+      onSubmitted?.();
     } catch {
       toast({ title: "Ошибка", description: "Не удалось отправить заявку. Попробуйте позже.", variant: "destructive" });
     } finally {
