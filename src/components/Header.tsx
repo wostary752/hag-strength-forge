@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, ShoppingCart } from "lucide-react";
+import { useCart } from "@/contexts/CartContext";
 
 /* sync v2 */
 
