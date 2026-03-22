@@ -1,9 +1,10 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ShoppingCart } from "lucide-react";
 import Layout from "@/components/Layout";
 import ContactFormDialog from "@/components/ContactFormDialog";
 import ProductSEO from "@/components/ProductSEO";
+import { useCart } from "@/contexts/CartContext";
 import rackLiteMain from "@/assets/rack-lite-main.jpg";
 import rackLite1 from "@/assets/rack-lite-1.jpg";
 import rackDetail1 from "@/assets/rack-detail-1.jpg";
@@ -17,6 +18,9 @@ import barbellRackEmpty from "@/assets/barbell-rack-empty.png";
 import barbellRackLoaded from "@/assets/barbell-rack-loaded.png";
 import bench45 from "@/assets/bench-45.png";
 import benchFlat from "@/assets/bench-flat.png";
+import latPulldownMain from "@/assets/lat-pulldown-main.png";
+import latPulldownDetail from "@/assets/lat-pulldown-detail.png";
+import latPulldownSide from "@/assets/lat-pulldown-side.png";
 import { useState } from "react";
 
 const productsData: Record<string, {
@@ -36,7 +40,7 @@ const productsData: Record<string, {
     images: [rackLiteMain, rackLite1, rackDetail1, rackDetail2, rackDetail3, rackDetail4, rackDetail5, rackDetail6],
     description:
       "Стойка для приседаний, которая становится тихим и надёжным партнёром в ваших тренировках. Болтовая сборка позволяет собрать её в гараже или зале, а при необходимости — легко разобрать и перевезти. Конструкция из стали 20 обеспечивает прочность и долговечность, а ответственные элементы из стали 09Г2С гарантируют безопасность при максимальных нагрузках.",
-    price: "152 000 ₽",
+    price: "94 800 ₽",
     specs: [
       { label: "Размер", value: "1700×1200×2300 мм" },
       { label: "Масса", value: "260 кг" },
@@ -46,6 +50,23 @@ const productsData: Record<string, {
       { label: "Покрытие", value: "Порошковая окраска" },
     ],
     category: "Силовые рамы",
+    categoryHref: "/products/power",
+  },
+  "lat-pulldown": {
+    title: "Тяга верхнего блока HGL294",
+    images: [latPulldownMain, latPulldownSide, latPulldownDetail],
+    description:
+      "Грузоблочный тренажёр для целенаправленной проработки широчайших мышц спины, задних дельт и бицепсов. Стек весовых блоков 100 кг с шагом регулировки 5 кг позволяет точно подобрать нагрузку как для начинающих, так и для опытных атлетов. Эргономичная конструкция обеспечивает правильную биомеханику движения, а усиленный стальной каркас гарантирует стабильность при интенсивных тренировках. Тросовая система с усиленными роликами работает плавно и бесшумно.",
+    price: "По запросу",
+    specs: [
+      { label: "Высота", value: "2200 мм" },
+      { label: "Ширина", value: "1080 мм" },
+      { label: "Глубина", value: "1100 мм" },
+      { label: "Масса", value: "230 кг" },
+      { label: "Стек блинов", value: "100 кг" },
+      { label: "Шаг регулировки", value: "5 кг" },
+    ],
+    category: "Силовые тренажеры",
     categoryHref: "/products/power",
   },
   "disc-rack-8": {
@@ -109,19 +130,30 @@ export default function ProductDetail() {
   const { id } = useParams<{ id: string }>();
   const product = id ? productsData[id] : null;
   const [activeImage, setActiveImage] = useState(0);
+  const { addItem } = useCart();
 
   if (!product) {
     return (
       <Layout>
         <section className="section-padding text-center">
           <h1 className="font-heading text-4xl uppercase mb-4">Товар не найден</h1>
-          <Link to="/products/power" className="text-primary hover:underline">
+          <Link to="/catalog" className="text-primary hover:underline">
             ← Вернуться к каталогу
           </Link>
         </section>
       </Layout>
     );
   }
+
+  const handleAddToCart = () => {
+    if (!id) return;
+    addItem({
+      id,
+      title: product.title,
+      price: product.price,
+      image: product.images[0],
+    });
+  };
 
   return (
     <Layout>
@@ -152,19 +184,21 @@ export default function ProductDetail() {
                   className={product.imageNaturalSize ? "w-full h-auto block" : `w-full h-full ${product.imageFit === "contain" ? "object-contain" : "object-cover"}`}
                 />
               </div>
-              <div className="grid grid-cols-4 gap-2">
-                {product.images.slice(0, 8).map((img, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setActiveImage(i)}
-                    className={`overflow-hidden rounded border-2 transition-colors flex items-center justify-center bg-secondary aspect-square ${
-                      activeImage === i ? "border-primary" : "border-border hover:border-primary/50"
-                    }`}
-                  >
-                    <img src={img} alt="" className={`w-full h-full aspect-square ${product.imageFit === "contain" ? "object-contain" : "object-cover"}`} />
-                  </button>
-                ))}
-              </div>
+              {product.images.length > 1 && (
+                <div className="grid grid-cols-4 gap-2">
+                  {product.images.slice(0, 8).map((img, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setActiveImage(i)}
+                      className={`overflow-hidden rounded border-2 transition-colors flex items-center justify-center bg-secondary aspect-square ${
+                        activeImage === i ? "border-primary" : "border-border hover:border-primary/50"
+                      }`}
+                    >
+                      <img src={img} alt="" className={`w-full h-full aspect-square ${product.imageFit === "contain" ? "object-contain" : "object-cover"}`} />
+                    </button>
+                  ))}
+                </div>
+              )}
             </motion.div>
 
             {/* Info */}
@@ -191,11 +225,20 @@ export default function ProductDetail() {
 
               <p className="font-heading text-2xl text-primary mb-6">{product.price}</p>
 
-              <ContactFormDialog defaultProduct={product.title}>
-                <button className="inline-block bg-primary text-primary-foreground font-heading uppercase tracking-widest text-sm px-8 py-4 rounded hover:bg-primary/90 transition-colors">
-                  Связаться для заказа
+              <div className="flex flex-col sm:flex-row gap-3">
+                <button
+                  onClick={handleAddToCart}
+                  className="inline-flex items-center justify-center gap-2 bg-secondary text-foreground font-heading uppercase tracking-widest text-sm px-8 py-4 rounded hover:bg-secondary/80 transition-colors border border-border"
+                >
+                  <ShoppingCart className="h-4 w-4" />
+                  В корзину
                 </button>
-              </ContactFormDialog>
+                <ContactFormDialog defaultProduct={product.title}>
+                  <button className="inline-block bg-primary text-primary-foreground font-heading uppercase tracking-widest text-sm px-8 py-4 rounded hover:bg-primary/90 transition-colors">
+                    Связаться для заказа
+                  </button>
+                </ContactFormDialog>
+              </div>
             </motion.div>
           </div>
         </div>
