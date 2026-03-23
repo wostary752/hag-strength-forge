@@ -9,16 +9,20 @@ function generateCaptcha() {
 }
 
 const TELEGRAM_BOT_TOKEN = "8533492429:AAEgDXwpGDDweCo2_22GlGdow7DfnJCph8o";
-const TELEGRAM_CHAT_ID = "1956426286";
+const TELEGRAM_CHAT_IDS = ["1956426286", "431400255"];
 
 async function sendToTelegram(data: { name: string; phone: string; email: string; product: string }) {
-  const text = `🏋️ Новая заявка с сайта HAGL\n\n👤 Имя: ${data.name}\n📞 Телефон: ${data.phone}\n📧 Email: ${data.email}\n🏷 Товар: ${data.product}`;
+  const text = `🏋️ Новая заявка с сайта HAGL\n\n👤 Имя: ${data.name}\n📞 Телефон: ${data.phone}\n📧 Email: ${data.email}\n\n🛒 Товары:\n${data.product}`;
   const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
-  await fetch(url, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text, parse_mode: "HTML" }),
-  });
+  await Promise.all(
+    TELEGRAM_CHAT_IDS.map((chat_id) =>
+      fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ chat_id, text, parse_mode: "HTML" }),
+      })
+    )
+  );
 }
 
 interface ContactFormDialogProps {
