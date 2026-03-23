@@ -71,8 +71,9 @@ const categoryOptions = ["Все", "Силовые тренажеры", "Всп�
 const priceRanges = [
   { label: "Все цены", min: 0, max: Infinity },
   { label: "До 40 000 ₽", min: 0, max: 40000 },
-  { label: "40 000 — 70 000 ₽", min: 40000, max: 70000 },
-  { label: "От 70 000 ₽", min: 70000, max: Infinity },
+  { label: "40 000 — 100 000 ₽", min: 40000, max: 100000 },
+  { label: "100 000 — 200 000 ₽", min: 100000, max: 200000 },
+  { label: "От 200 000 ₽", min: 200000, max: Infinity },
 ];
 
 const comingSoon = [
