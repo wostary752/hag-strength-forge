@@ -11,14 +11,14 @@ const products = [
     title: "RACK LITE",
     image: rackLite2,
     description: "Силовая рама для приседаний с болтовой сборкой. 1700×1200×2300 мм, 260 кг. Сталь 20 / 09Г2С.",
-    price: "94 800 ₽",
+    price: "152 000 ₽",
   },
   {
     id: "lat-pulldown",
     title: "Тяга верхнего блока HGL294",
     image: latPulldownMain,
     description: "Грузоблочный тренажёр для тренировки широчайших мышц спины. Стек 100 кг с шагом 5 кг.",
-    price: "По запросу",
+    price: "185 000 ₽",
   },
 ];
 
