@@ -221,6 +221,7 @@ export default function Catalog() {
                     price={p.price}
                     href={p.href}
                     imageNaturalSize={p.imageNaturalSize}
+                    imagePosition={(p as any).imagePosition}
                   />
                 </motion.div>
               ))}

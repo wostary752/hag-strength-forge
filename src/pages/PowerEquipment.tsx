@@ -54,6 +54,7 @@ export default function PowerEquipment() {
                 description={p.description}
                 price={p.price}
                 href={`/product/${p.id}`}
+                imagePosition={(p as any).imagePosition}
               />
             ))}
           </div>
