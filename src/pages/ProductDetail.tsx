@@ -127,6 +127,24 @@ const productsData: Record<string, {
     categoryHref: "/products/auxiliary",
     imageNaturalSize: true,
   },
+  "bench-press": {
+    title: "Скамья для жима лёжа HGL102",
+    images: [benchPressMain, benchPressLoaded, benchPressDetail],
+    description:
+      "Профессиональная скамья для жима штанги лёжа со встроенными стойками и интегрированными держателями для дисков. Усиленный каркас из стали 3 мм обеспечивает максимальную жёсткость и устойчивость при работе с большими весами. Порошковое покрытие защищает от коррозии и механических повреждений. Эргономичная подушка оптимальной ширины обеспечивает надёжную опору для спины.",
+    price: "105 000 ₽",
+    specs: [
+      { label: "Длина", value: "1970 мм" },
+      { label: "Ширина", value: "1860 мм" },
+      { label: "Высота", value: "1250 мм" },
+      { label: "Масса", value: "70 кг" },
+      { label: "Основной металл", value: "Сталь 3 мм" },
+      { label: "Покрытие", value: "Порошковая окраска" },
+    ],
+    category: "Скамейки",
+    categoryHref: "/products/auxiliary",
+    imageNaturalSize: true,
+  },
 };
 
 export default function ProductDetail() {

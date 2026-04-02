@@ -68,6 +68,17 @@ const allProducts = [
     imageNaturalSize: true,
     imagePosition: "30% center",
   },
+  {
+    id: "bench-press",
+    title: "Скамья для жима лёжа HGL102",
+    image: benchPressMain,
+    description: "Профессиональная скамья для жима штанги лёжа. Усиленный каркас из стали 3 мм, порошковое покрытие.",
+    price: "105 000 ₽",
+    numericPrice: 105000,
+    category: "Вспомогательное оборудование",
+    href: "/product/bench-press",
+    imageNaturalSize: true,
+  },
 ];
 
 const categoryOptions = ["Все", "Силовые тренажеры", "Вспомогательное оборудование"];

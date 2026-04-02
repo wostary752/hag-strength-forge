@@ -123,6 +123,7 @@ export default function AuxiliaryEquipment() {
                     price={p.price}
                     href={`/product/${p.id}`}
                     imageNaturalSize
+                    imagePosition={(p as any).imagePosition}
                   />
                 ))}
               </motion.div>
