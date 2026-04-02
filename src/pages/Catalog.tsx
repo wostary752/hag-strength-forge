@@ -65,8 +65,7 @@ const allProducts = [
     numericPrice: 35000,
     category: "Вспомогательное оборудование",
     href: "/product/bench-universal",
-    imageNaturalSize: true,
-    imagePosition: "20% center",
+    imageFit: "contain" as const,
   },
   {
     id: "bench-press",
@@ -77,7 +76,7 @@ const allProducts = [
     numericPrice: 105000,
     category: "Вспомогательное оборудование",
     href: "/product/bench-press",
-    imageNaturalSize: true,
+    imageFit: "contain" as const,
   },
 ];
 
