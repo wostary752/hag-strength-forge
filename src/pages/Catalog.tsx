@@ -9,6 +9,7 @@ import discRackNew from "@/assets/disc-rack-new.png";
 import barbellRackLoaded from "@/assets/barbell-rack-loaded.png";
 import bench45 from "@/assets/bench-45.png";
 import latPulldownMain from "@/assets/lat-pulldown-main.png";
+import benchPressMain from "@/assets/bench-press-main.png";
 import { Dumbbell, Heart, Zap, SlidersHorizontal, X } from "lucide-react";
 
 const allProducts = [
