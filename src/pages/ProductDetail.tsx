@@ -21,6 +21,9 @@ import benchFlat from "@/assets/bench-flat.png";
 import latPulldownMain from "@/assets/lat-pulldown-main.png";
 import latPulldownDetail from "@/assets/lat-pulldown-detail.png";
 import latPulldownSide from "@/assets/lat-pulldown-side.png";
+import benchPressMain from "@/assets/bench-press-main.png";
+import benchPressDetail from "@/assets/bench-press-detail.png";
+import benchPressLoaded from "@/assets/bench-press-loaded.png";
 import { useState } from "react";
 
 const productsData: Record<string, {
@@ -118,6 +121,24 @@ const productsData: Record<string, {
       { label: "Ширина", value: "660 мм" },
       { label: "Угол регулировки", value: "до 90°" },
       { label: "Масса", value: "20 кг" },
+      { label: "Покрытие", value: "Порошковая окраска" },
+    ],
+    category: "Скамейки",
+    categoryHref: "/products/auxiliary",
+    imageNaturalSize: true,
+  },
+  "bench-press": {
+    title: "Скамья для жима лёжа HGL102",
+    images: [benchPressMain, benchPressLoaded, benchPressDetail],
+    description:
+      "Профессиональная скамья для жима штанги лёжа со встроенными стойками и интегрированными держателями для дисков. Усиленный каркас из стали 3 мм обеспечивает максимальную жёсткость и устойчивость при работе с большими весами. Порошковое покрытие защищает от коррозии и механических повреждений. Эргономичная подушка оптимальной ширины обеспечивает надёжную опору для спины.",
+    price: "105 000 ₽",
+    specs: [
+      { label: "Длина", value: "1970 мм" },
+      { label: "Ширина", value: "1860 мм" },
+      { label: "Высота", value: "1250 мм" },
+      { label: "Масса", value: "70 кг" },
+      { label: "Основной металл", value: "Сталь 3 мм" },
       { label: "Покрытие", value: "Порошковая окраска" },
     ],
     category: "Скамейки",

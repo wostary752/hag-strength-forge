@@ -6,6 +6,7 @@ import PageSEO from "@/components/PageSEO";
 import discRackNew from "@/assets/disc-rack-new.png";
 import barbellRackLoaded from "@/assets/barbell-rack-loaded.png";
 import bench45 from "@/assets/bench-45.png";
+import benchPressMain from "@/assets/bench-press-main.png";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const discRacks = [
@@ -35,6 +36,15 @@ const benches = [
     description:
       "Регулируемая скамья для жима и силовых упражнений. Угол наклона спинки до 90° позволяет выполнять упражнения от горизонтального жима до армейского. Компактная и лёгкая — всего 20 кг.",
     price: "35 000 ₽",
+    imagePosition: "30% center",
+  },
+  {
+    id: "bench-press",
+    title: "Скамья для жима лёжа HGL102",
+    image: benchPressMain,
+    description:
+      "Профессиональная скамья для жима штанги лёжа со встроенными стойками и держателями для дисков. Усиленный каркас из стали 3 мм и порошковое покрытие обеспечивают надёжность и долговечность.",
+    price: "105 000 ₽",
   },
 ];
 const holders: unknown[] = [];
@@ -113,6 +123,7 @@ export default function AuxiliaryEquipment() {
                     price={p.price}
                     href={`/product/${p.id}`}
                     imageNaturalSize
+                    imagePosition={(p as any).imagePosition}
                   />
                 ))}
               </motion.div>
