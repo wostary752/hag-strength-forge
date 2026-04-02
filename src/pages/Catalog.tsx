@@ -31,6 +31,7 @@ const allProducts = [
     numericPrice: 185000,
     category: "Силовые тренажеры",
     href: "/product/lat-pulldown",
+    imagePosition: "center 20%",
   },
   {
     id: "disc-rack-8",
