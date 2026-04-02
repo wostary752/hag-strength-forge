@@ -128,6 +128,7 @@ export default function Index() {
                   price={p.price}
                   href={p.href}
                   imageNaturalSize={p.imageNaturalSize}
+                  imagePosition={(p as any).imagePosition}
                 />
               </motion.div>
             ))}
