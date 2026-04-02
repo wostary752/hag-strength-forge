@@ -26,6 +26,7 @@ export default function ProductCard({ title, image, description, price, href, im
         <img
           src={image}
           alt={title}
+          style={imagePosition ? { objectPosition: imagePosition } : undefined}
           className={`w-full h-full transition-transform duration-500 group-hover:scale-105 ${imageFit === "contain" ? "object-contain" : "object-cover"}`}
         />
       </div>
