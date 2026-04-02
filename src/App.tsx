@@ -18,6 +18,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import LicenseAgreement from "./pages/LicenseAgreement";
 import CustomDevelopment from "./pages/CustomDevelopment";
 import NotFound from "./pages/NotFound";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ScrollToTop />
           <CartDrawer />
           <Routes>
             <Route path="/" element={<Index />} />

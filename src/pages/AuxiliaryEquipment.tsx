@@ -36,7 +36,7 @@ const benches = [
     description:
       "Регулируемая скамья для жима и силовых упражнений. Угол наклона спинки до 90° позволяет выполнять упражнения от горизонтального жима до армейского. Компактная и лёгкая — всего 20 кг.",
     price: "35 000 ₽",
-    imagePosition: "30% center",
+    imageFit: "contain" as const,
   },
   {
     id: "bench-press",
@@ -45,6 +45,7 @@ const benches = [
     description:
       "Профессиональная скамья для жима штанги лёжа со встроенными стойками и держателями для дисков. Усиленный каркас из стали 3 мм и порошковое покрытие обеспечивают надёжность и долговечность.",
     price: "105 000 ₽",
+    imageFit: "contain" as const,
   },
 ];
 const holders: unknown[] = [];
@@ -122,8 +123,7 @@ export default function AuxiliaryEquipment() {
                     description={p.description}
                     price={p.price}
                     href={`/product/${p.id}`}
-                    imageNaturalSize
-                    imagePosition={(p as any).imagePosition}
+                    imageFit={p.imageFit}
                   />
                 ))}
               </motion.div>

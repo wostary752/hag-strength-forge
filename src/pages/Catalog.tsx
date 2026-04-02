@@ -32,7 +32,7 @@ const allProducts = [
     numericPrice: 185000,
     category: "Силовые тренажеры",
     href: "/product/lat-pulldown",
-    imagePosition: "center 20%",
+    imagePosition: "center 30%",
   },
   {
     id: "disc-rack-8",
@@ -65,8 +65,7 @@ const allProducts = [
     numericPrice: 35000,
     category: "Вспомогательное оборудование",
     href: "/product/bench-universal",
-    imageNaturalSize: true,
-    imagePosition: "30% center",
+    imageFit: "contain" as const,
   },
   {
     id: "bench-press",
@@ -77,7 +76,7 @@ const allProducts = [
     numericPrice: 105000,
     category: "Вспомогательное оборудование",
     href: "/product/bench-press",
-    imageNaturalSize: true,
+    imageFit: "contain" as const,
   },
 ];
 
@@ -234,6 +233,7 @@ export default function Catalog() {
                     href={p.href}
                     imageNaturalSize={p.imageNaturalSize}
                     imagePosition={(p as any).imagePosition}
+                    imageFit={(p as any).imageFit}
                   />
                 </motion.div>
               ))}
