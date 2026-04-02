@@ -6,6 +6,7 @@ import PageSEO from "@/components/PageSEO";
 import discRackNew from "@/assets/disc-rack-new.png";
 import barbellRackLoaded from "@/assets/barbell-rack-loaded.png";
 import bench45 from "@/assets/bench-45.png";
+import benchPressMain from "@/assets/bench-press-main.png";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const discRacks = [
