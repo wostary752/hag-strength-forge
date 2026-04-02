@@ -21,6 +21,9 @@ import benchFlat from "@/assets/bench-flat.png";
 import latPulldownMain from "@/assets/lat-pulldown-main.png";
 import latPulldownDetail from "@/assets/lat-pulldown-detail.png";
 import latPulldownSide from "@/assets/lat-pulldown-side.png";
+import benchPressMain from "@/assets/bench-press-main.png";
+import benchPressDetail from "@/assets/bench-press-detail.png";
+import benchPressLoaded from "@/assets/bench-press-loaded.png";
 import { useState } from "react";
 
 const productsData: Record<string, {
