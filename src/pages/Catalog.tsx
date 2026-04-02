@@ -66,7 +66,7 @@ const allProducts = [
     category: "Вспомогательное оборудование",
     href: "/product/bench-universal",
     imageNaturalSize: true,
-    imagePosition: "30% center",
+    imagePosition: "20% center",
   },
   {
     id: "bench-press",
