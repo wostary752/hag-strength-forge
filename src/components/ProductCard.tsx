@@ -10,9 +10,10 @@ interface ProductCardProps {
   imageFit?: "cover" | "contain";
   imageAspect?: string;
   imageNaturalSize?: boolean;
+  imagePosition?: string;
 }
 
-export default function ProductCard({ title, image, description, price, href, imageFit = "cover", imageAspect = "aspect-square", imageNaturalSize = false }: ProductCardProps) {
+export default function ProductCard({ title, image, description, price, href, imageFit = "cover", imageAspect = "aspect-square", imageNaturalSize = false, imagePosition }: ProductCardProps) {
   const content = (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -25,6 +26,7 @@ export default function ProductCard({ title, image, description, price, href, im
         <img
           src={image}
           alt={title}
+          style={imagePosition ? { objectPosition: imagePosition } : undefined}
           className={`w-full h-full transition-transform duration-500 group-hover:scale-105 ${imageFit === "contain" ? "object-contain" : "object-cover"}`}
         />
       </div>

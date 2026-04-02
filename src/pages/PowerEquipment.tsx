@@ -19,6 +19,7 @@ const products = [
     image: latPulldownMain,
     description: "Грузоблочный тренажёр для тренировки широчайших мышц спины. Стек 100 кг с шагом 5 кг.",
     price: "185 000 ₽",
+    imagePosition: "center 20%",
   },
 ];
 
@@ -53,6 +54,7 @@ export default function PowerEquipment() {
                 description={p.description}
                 price={p.price}
                 href={`/product/${p.id}`}
+                imagePosition={(p as any).imagePosition}
               />
             ))}
           </div>
