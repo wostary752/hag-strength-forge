@@ -27,7 +27,7 @@ const advantages = [
 
 const featuredProducts = [
   { id: "rack-lite", title: "RACK LITE", image: rackLiteMain, description: "Стойка для приседаний. Болтовая сборка, сталь 20 и 09Г2С.", price: "152 000 ₽", href: "/product/rack-lite" },
-  { id: "lat-pulldown", title: "Тяга верхнего блока HGL294", image: latPulldownMain, description: "Грузоблочный тренажёр для тренировки широчайших мышц спины.", price: "185 000 ₽", href: "/product/lat-pulldown", imagePosition: "center 30%" },
+  { id: "lat-pulldown", title: "Тяга верхнего блока HGL294", image: latPulldownMain, description: "Грузоблочный тренажёр для тренировки широчайших мышц спины.", price: "185 000 ₽", href: "/product/lat-pulldown", { id: "lat-pulldown", title: "Тяга верхнего блока HGL294", image: latPulldownMain, description: "Грузоблочный тренажёр для тренировки широчайших мышц спины.", price: "185 000 ₽", href: "/product/lat-pulldown", imagePosition: "center 70%" }, },
   { id: "disc-rack-8", title: "Стойка для дисков HGL01", image: discRackNew, description: "Сталь 3 мм, восемь держателей 50 мм.", price: "34 800 ₽", href: "/product/disc-rack-8", imageNaturalSize: true },
   { id: "bench-universal", title: "Скамья HGL03", image: bench45, description: "Регулируемая скамья для жима. Угол до 90°.", price: "35 000 ₽", href: "/product/bench-universal", imageFit: "contain" as const },
 ];
